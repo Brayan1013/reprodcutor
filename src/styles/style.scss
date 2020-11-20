@@ -1,0 +1,114 @@
+@import './song';
+@import './player';
+@import './sidebar';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(65, 65, 65);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.animation-container-sidebar {
+  display: none;
+  transition: all 1s ease-out;
+}
+
+@keyframes animate-sidebar {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.container-sidebar {
+  flex: 1 1 25rem;
+  animation-name: animate-sidebar;
+  animation-duration: 1s;
+}
+
+.container-music {
+  flex: 6 1 25rem;
+}
+
+body {
+  font-size: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+//mobile friendly
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 80%;
+  }
+
+  .animation-container-sidebar {
+    width: 0%;
+    transition: all 1s ease-out;
+  }
+
+  .container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgb(42, 42, 42);
+    h1,
+    h2 {
+      color: white;
+    }
+  }
+
+  .show-library {
+    z-index: 1;
+    position: absolute;
+    height: 20vh;
+    top: 2.5%;
+    left: 10%;
+
+    button {
+      background: black;
+      color: white;
+      font-size: 0.8rem;
+    }
+  }
+
+  .title-library {
+    display: flex;
+    margin-left: 2rem;
+  }
+
+  .song-container {
+    img {
+      margin-top: 6rem;
+      width: 50%;
+    }
+
+    h2,
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  .time-control {
+    margin-top: 2rem;
+    width: 90%;
+  }
+
+  .play-control {
+    width: 60%;
+  }
+}

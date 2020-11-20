@@ -1,0 +1,51 @@
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 20%;
+    border-radius: 50%;
+  }
+
+  h2 {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+.show-library {
+  width: 100%;
+  text-align: right;
+
+  button {
+    margin: 2rem 4rem;
+    padding: 0.5rem 1.5rem;
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
+
+.rotate {
+  animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
